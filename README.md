@@ -1,4 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+module.exports = {
+    purge: ["./src/**/*.{js,jsx,ts,tsx}", './public/index.html'],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+        extend: {},
+        screens: {
+            sm: '640px',
+            // => @media (min-width: 640px) {...}
+
+            md: '768px',
+            // => @media (min-width: 768px) {...}
+
+            lg: '1024px,'
+            // => @media (min-width: 1024px) {...}
+
+            xl: '1280px',
+            // => @media (min-width: 1280px) {...}
+
+            '2xl': '1535px',
+            // => @media (min-width: 1536px) {...}
+
+        },
+    },
+    variants:{
+        extend: {},
+    },
+    plugins: [],
+};
+
+
+ <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
 
@@ -41,4 +71,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/). -->
+
+ 
