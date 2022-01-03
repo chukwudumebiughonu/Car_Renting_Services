@@ -5,20 +5,11 @@ import tw from 'twin.macro';
 import CarLogoImg from '../../../assets/images/car-logo.png';
 
 const LogoContainer = styled.div`
-  ${tw`
-    flex
-    items-center
-  `};
+  ${tw`flex items-center `};
 `;
 
 const LogoText = styled.div`
-  ${tw`
-  text-xl
-  md: text-2xl
-  font-bold
-  text-black
-  m-1
-  `};
+  ${tw`m-1 text-xl text-2xl font-bold text-black md:`};
 `;
 
 const Image = styled.div`
@@ -37,6 +28,6 @@ export function Logo() {
         <Image>
             <img src={CarLogoImg} alt="logo"/>
         </Image>
-        <LogoText>CoolCar.</LogoText>
+        <LogoText>Dumebi'sCar.</LogoText>
   </LogoContainer>
 }
