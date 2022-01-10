@@ -30,6 +30,10 @@ const Name = styled.span`
   ${tw`text-xs text-gray-600 cursor-pointer md:text-sm`}
 `;
 
+const smallicon = styled.span`
+
+`;
+
 const LineSeperator = styled.span`
   width: 2px;
   height: 45%;
@@ -45,28 +49,39 @@ const DateCalendar = styled(Calendar)`
 `;
 
 export function BookCard() {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState<Date>(new Date());
   const [isStartCalendarOpen, setStartCalendarOpen] = useState(false);  
+   
+  const [returnDate, setReturnDate] = useState<Date>(new Date());
+  const [isReturnCalendarOpen, setReturnCalendarOpen] = useState(false);  
 
   const toggleStartDateCalendar = () => {
     setStartCalendarOpen(!isStartCalendarOpen);
+    if(isReturnCalendarOpen) setReturnCalendarOpen(false);
   }
   
+  const toggleReturnDateCalendar = () => {
+    setReturnCalendarOpen(!isReturnCalendarOpen);
+    if(isStartCalendarOpen) setStartCalendarOpen(false);
+  }
     return (
         <CardContainer >
         <ItemContainer>
             <Icon>
                 <FontAwesomeIcon icon={ faCalendarAlt } />
             </Icon>
-          <Name onClick={toggleStartDateCalendar}>Pick Up Date</Name>
-          { isStartCalendarOpen && <DateCalendar value={ startDate } onChange={ setStartDate }/> }
+           <Name onClick={toggleStartDateCalendar}>Pick Up Date</Name>
+          { isStartCalendarOpen && <DateCalendar value={ startDate } onChange={ setStartDate as any }/> }
         </ItemContainer>
-        <LineSeperator/>
-        <ItemContainer>
+        <LineSeperator/>  
+         <ItemContainer>
             <Icon>
-                <FontAwesomeIcon icon={faCalendarAlt} />
+                <FontAwesomeIcon icon= {faCalendarAlt} />
             </Icon>
-            <Name>Return Date</Name>
+            <Name onClick={toggleReturnDateCalendar}>Return Date</Name>
+            {isReturnCalendarOpen && 
+              <DateCalendar value={ returnDate } onChange={ setReturnDate as any}/>
+              }
         </ItemContainer>
         <Marginer direction='horizontal' margin='2em' />
         <Button text='Book your ride'/>
