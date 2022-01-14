@@ -8,6 +8,7 @@ import { Marginer } from '../../components/marginer'
 
 
 
+
 const PageContainer = styled.div`
   ${tw`flex flex-col items-center w-full h-full overflow-x-hidden `}
 `;
@@ -16,7 +17,8 @@ export function HomePage() {
     return <PageContainer>
         < Navbar />
       <TopSection />
-      <Marginer direction='vertical' margin='2em' />
+      <Marginer direction='vertical' margin='4em' />
       <BookCard/>
+      <Marginer direction='vertical' margin='4em' />
     </PageContainer>; 
 }
