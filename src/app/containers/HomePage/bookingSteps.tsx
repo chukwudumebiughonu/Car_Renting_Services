@@ -7,6 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
 const Container = styled.div`
   ${tw`
    w-full
@@ -23,7 +24,7 @@ const Container = styled.div`
 const Title = styled.h2`
  ${tw`
    text-3xl
-   lg: text-5xl
+   lg:text-5xl
    text-black
    font-extrabold
  `};
@@ -68,7 +69,7 @@ ${tw`
   text-lg
   font-semibold
   mt-4
- `}
+ `};
 `;
 
 const StepDescription = styled.p`
@@ -88,7 +89,8 @@ const StepIcon = styled.span`
   `};
 `;
 export function BookingSteps() {
-  return <Container>
+  return(
+  <Container>
          <Title>Our working steps</Title>
     <StepsContainer>
        <StepContainer>
@@ -126,4 +128,5 @@ export function BookingSteps() {
        </StepContainer>
     </StepsContainer>
   </Container>
+  );
 }
