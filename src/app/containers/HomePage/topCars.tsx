@@ -6,6 +6,8 @@ import { ICar } from "../../../typings/car";
 import { Car } from "../../components/car";
 import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
+import { useMediaQuery } from 'react-responsive';
+import { SCREENS } from "../../components/responsive";
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -45,6 +47,8 @@ const CarsContainer = styled.div`
 export function TopCars() {
   const [current, setCurrent] = useState(0);
 
+  const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
+
   const testCar: ICar = {
     name: "Audi S3 Car",
     mileage: "10k",
@@ -67,6 +71,14 @@ export function TopCars() {
     gas: "Petrol",
   };
 
+  const cars = [
+            <Car {...testCar2} />,
+            <Car {...testCar} />,
+            <Car {...testCar2} />,
+            <Car {...testCar} />,
+            <Car {...testCar2} />,
+  ];
+  const numberOFDots = isMobile ? cars.length : Math.ceil(cars.length / 3)
   return (
     <TopCarsContainer>
       <Title>Explore Our Top Deals</Title>
@@ -74,13 +86,7 @@ export function TopCars() {
         <Carousel
           value={current}
           onChange={setCurrent}
-          slides={[
-            <Car {...testCar2} />,
-            <Car {...testCar} />,
-            <Car {...testCar2} />,
-            <Car {...testCar} />,
-            <Car {...testCar2} />,
-          ]}
+          slides={cars}
           plugins={[
             'clickToChange',
             {
@@ -91,8 +97,34 @@ export function TopCars() {
             },
             
           ]}
+          breakpoints={{
+            640: {
+              plugins:[
+                'clickToChange',
+                {
+                  resolve: slidesToShowPlugin,  
+                  options: {
+                    numberOfSlides: 1,
+                  },
+                },
+                
+              ]
+            },
+            900: {
+              plugins:[
+                'clickToChange',
+                {
+                  resolve: slidesToShowPlugin,  
+                  options: {
+                    numberOfSlides: 2,
+                  },
+                },
+                
+              ]
+            }
+          }}
         />
-        <Dots value={current} onChange={setCurrent} number={2} />
+        <Dots value={current} onChange={setCurrent} number={numberOFDots} />
       </CarsContainer>
     </TopCarsContainer>
   );
