@@ -84,7 +84,7 @@ const StepDescription = styled.p`
 
 const StepIcon = styled.span`
   ${tw`
-    text-red-500
+    text-purple-900
     text-3xl
   `};
 `;
