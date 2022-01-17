@@ -158,7 +158,7 @@ export function Footer() {
         <AboutContainer>
           <Logo color="white" bgColor="dark" />
           <AboutText>
-            Yourcar is a Car renting and selling company located in many
+            Dumebi's car is a the best Car renting and selling company located in many
             countries across the world which has high quality cars and top rated
             service.
           </AboutText>
@@ -218,16 +218,16 @@ export function Footer() {
             <RedIcon>
               <FontAwesomeIcon icon={faEnvelope} />
             </RedIcon>
-            <SmallText>info@yourcar.com</SmallText>
+            <SmallText>info@dumebiscar.com</SmallText>
           </HorizontalContainer>
         </SectionContainer>
       </InnerContainer>
       <BottomContainer>
         <CopyrightText>
-          Copyright &copy; {new Date().getFullYear()} Yourcar. All rights
+          Copyright &copy; {new Date().getFullYear()} Dumebi's. All rights
           reserved.
         </CopyrightText>
       </BottomContainer>
     </FooterContainer>
   );
-}
+} 
