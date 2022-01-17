@@ -82,9 +82,13 @@ export function TopCars() {
             <Car {...testCar2} />,
           ]}
           plugins={[
+            'clickToChange',
             {
-              resolve:     slidesToShowPlugin,  
-            }
+              resolve: slidesToShowPlugin,  
+              options: {
+                numberOfSlides: 3,
+              },
+            },
             
           ]}
         />
