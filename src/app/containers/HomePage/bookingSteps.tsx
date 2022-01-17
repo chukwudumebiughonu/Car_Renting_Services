@@ -127,6 +127,6 @@ export function BookingSteps() {
             </StepDescription>
        </StepContainer>
     </StepsContainer>
-  </Container>
+  </Container> //booking steps 
   );
 }
