@@ -9,7 +9,7 @@ import {
   faTachometerAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Carousel from '@brainhubeu/react-carousel';
+// import Carousel from '@brainhubeu/react-carousel';
 
 interface ICarProps extends ICar{
 
@@ -152,7 +152,7 @@ export function Car(props: ICarProps ){
       return (
         <CarContainer>
         <CarThumbnail>
-          <img src={thumbnailSrc} />
+          <img src={thumbnailSrc} alt='' />
         </CarThumbnail>
         <CarName>{name}</CarName>
         <PricesContainer>
